@@ -4,6 +4,7 @@ using System.Text;
 using Xamarin.Forms;
 using System.ComponentModel;
 using Xamarin.Essentials;
+using System.Windows.Input;
 /* Author: James Anderson		Course: NMAD.261.01
 Date: Spring 2022
 Purpose of the file: Study Xamarin Essentials
@@ -12,6 +13,18 @@ namespace XamarinEssentials
 {
     public class Preferences : BindableObject
     {
+        public Preferences()
+        {
+            ResetPrefs = new Command(OnResetPrefs);
+        }
+
+        public void OnResetPrefs()
+        {
+            Xamarin.Essentials.Preferences.Clear();
+        }
+
+        public ICommand ResetPrefs { private set; get; }
+
         public string Entry
         {
             get => Xamarin.Essentials.Preferences.Get("Entry", "");

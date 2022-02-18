@@ -41,6 +41,10 @@ Caveats: -->
                            VerticalOptions="Center"/>
                     <Switch IsToggled="{Binding SwitchInput}"/>
                 </StackLayout>
+                <Button 
+                    Text="Reset"
+                    HorizontalOptions="Center"
+                    Command="{Binding ResetPrefs}" />
             </StackLayout>
         </Frame>
     </StackLayout>
