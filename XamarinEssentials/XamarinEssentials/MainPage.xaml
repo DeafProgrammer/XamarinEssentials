@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Author: James Anderson		Course: NMAD.261.01
+Date: Spring 2022
+Purpose of the file: Study Xamarin Essentials
+Caveats: -->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:XamarinEssentials"
+             x:Class="XamarinEssentials.MainPage"
+             Title="Essentials">
+    <ContentPage.BindingContext>
+        <viewmodels:Preferences/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="30, 40"
+                 BackgroundColor="#1F1F1F">
+        <Frame CornerRadius="10" BackgroundColor="#333333">
+            <StackLayout Spacing="10">
+                <Label Text="Preferences"
+                       FontSize="Large"
+                       HorizontalOptions="Center" 
+                       Margin="0,0,0,20"
+                       TextColor="#9ACAE3"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Entry: " 
+                           TextColor="#D1A338"
+                           VerticalOptions="Center"/>
+                    <Entry Text="{Binding Entry}" 
+                           WidthRequest="225"
+                           TextColor="#C2C2C2"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="CheckBox: "
+                           TextColor="#D1A338"
+                           VerticalOptions="Center"/>
+                    <CheckBox IsChecked="{Binding IsChecked}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Switch: "
+                           TextColor="#D1A338"
+                           VerticalOptions="Center"/>
+                    <Switch IsToggled="{Binding SwitchInput}"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>
